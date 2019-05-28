@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>标签页</title>
+		
+		<script type="text/javascript" src="https://cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>　　
+
+		<script>
+
+!
+function() {
+    function n(n, e, t) {
+        return n.getAttribute(e) || t
+    }
+    function e(n) {
+        return document.getElementsByTagName(n)
+    }
+    function t() {
+        var t = e("script"),
+        o = t.length,
+        i = t[o - 1];
+        return {
+            l: o,
+            z: n(i, "zIndex", -1),
+            o: n(i, "opacity", .5),
+            c: n(i, "color", "0,0,0"),
+            n: n(i, "count", 99)
+        }
+    }
+    function o() {
+        a = m.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
+        c = m.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
+    }
+    function i() {
+        r.clearRect(0, 0, a, c);
+        var n, e, t, o, m, l;
+        s.forEach(function(i, x) {
+            for (i.x += i.xa, i.y += i.ya, i.xa *= i.x > a || i.x < 0 ? -1 : 1, i.ya *= i.y > c || i.y < 0 ? -1 : 1, r.fillRect(i.x - .5, i.y - .5, 1, 1), e = x + 1; e < u.length; e++) n = u[e],
+            null !== n.x && null !== n.y && (o = i.x - n.x, m = i.y - n.y, l = o * o + m * m, l < n.max && (n === y && l >= n.max / 2 && (i.x -= .03 * o, i.y -= .03 * m), t = (n.max - l) / n.max, r.beginPath(), r.lineWidth = t / 2, r.strokeStyle = "rgba(" + d.c + "," + (t + .2) + ")", r.moveTo(i.x, i.y), r.lineTo(n.x, n.y), r.stroke()))
+        }),
+        x(i)
+    }
+    var a, c, u, m = document.createElement("canvas"),
+    d = t(),
+    l = "c_n" + d.l,
+    r = m.getContext("2d"),
+    x = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
+    function(n) {
+        window.setTimeout(n, 1e3 / 45)
+    },
+    w = Math.random,
+    y = {
+        x: null,
+        y: null,
+        max: 2e4
+    };
+    m.id = l,
+    m.style.cssText = "position:fixed;top:0;left:0;z-index:" + d.z + ";opacity:" + d.o,
+    e("body")[0].appendChild(m),
+    o(),
+    window.onresize = o,
+    window.onmousemove = function(n) {
+        n = n || window.event,
+        y.x = n.clientX,
+        y.y = n.clientY
+    },
+    window.onmouseout = function() {
+        y.x = null,
+        y.y = null
+    };
+    for (var s = [], f = 0; d.n > f; f++) {
+        var h = w() * a,
+        g = w() * c,
+        v = 2 * w() - 1,
+        p = 2 * w() - 1;
+        s.push({
+            x: h,
+            y: g,
+            xa: v,
+            ya: p,
+            max: 6e3
+        })
+    }
+    u = s.concat([y]),
+    setTimeout(function() {
+        i()
+    },
+    100)
+} ();
+		</script>
+		<style>
+			*{margin: 0;padding: 0;}
+			a{text-decoration: none; margin-left: 50px;margin-top: 100px;}
+			a:link{color: #000;}
+			a:visited{color: #000;}
+			a:hover{ color: dodgerblue; background: #f5f5f5;}
+			div{ width: 800px;height: 500px;background: ; position: absolute;left: 20%;top: 10%; }
+			input{ width: 830px; height: 50px; outline: none; padding-left: 50px; border:none;color:transparent;text-shadow:0 0 0 orange;background-color: transparent;font-size: 18px;}
+			#mm{position: absolute;left: -300em; }
+			
+			
+		</style>
+
+	</head>
+	<body>
+		<!--
+        	作者：trynx@qq.com
+        	时间：2019-05-27
+        	描述：
+        	<a href="" target="_blank">  </a>
+        	   
+        -->
+        <div>
+		<a href="https://www.52pojie.cn/" target="_blank">吾爱破解</a>
+		<a href="https://www.baidu.com" target="_blank">百度一下</a>	
+		<a href="https://www.taobao.com" target="_blank"> 淘宝网 </a>
+		<a href="https://www.fensifuligou.net/" target="_blank"> 优惠券助手 </a>
+		<a href="http://www.iqiyi.com/" target="_blank">  爱奇艺</a>
+		<a href="http://mail.qq.com/" target="_blank">qq邮箱 </a>
+        <a href="https://my.chsi.com.cn/archive/index.jsp" target="_blank"> 学信档案 </a>
+        <a href="http://v.qq.com/" target="_blank">  腾讯视频</a>
+        <a href="http://www.youku.com/" target="_blank"> 优酷视频 </a>
+        <a href="http://www.kankanzhan.com/" target="_blank"> 西西站 </a>
+        <a href="https://www.80s.tw/" target="_blank">  80s</a>
+        <a href="http://www.adtchrome.com/" target="_blank"> 广告终结者 </a>
+        <a href="http://www.360doc.com/login.aspx?reurl=http://www.360doc.com/myfiles.aspx?app=1$$type=3" target="_blank">  360doc</a>
+        <a href="http://www.amazon.cn/" target="_blank"> 亚马逊  </a>	   <br>	   	 	 
+        <a href="http://magnet.chongbuluo.com/" target="_blank"> 网盘搜索 </a>
+        <a href="https://www.google.com/" target="_blank"> Google </a>
+        <a href="https://www.icloud.com/" target="_blank"> icloud </a>
+        <a href="https://greasyfork.org/zh-CN" target="_blank"> 脚本安装 </a>
+        <a href="https://github.com/" target="_blank"> github </a>
+        <a href="https://login.microsoftonline.com/common/oauth2/authorize?client-request-id=74ad6b66-8c2f-469e-8157-7545840d4b7b&client_id=4345a7b9-9a63-4910-a426-35363201d503&login_hint=24069@myoffice.site&mkt=zh-CN&msafed=0&nonce=636933550541342992.ZTdmODUxMjUtYjI3Mi00MGFiLWJjZTktNmMzNTg1NTM4MWY4NWJlOTAzNGYtZmI0Zi00OWYzLWFjODYtNjFlMzI4ODhiOWVi&redirect_uri=https://www.office.com/&response_mode=form_post&response_type=code+id_token&scope=openid+profile&sso_reload=true&state=OpenIdConnect.AuthenticationProperties=1Cpqw_V64UgLDpoS0KZ8oW1OPvN55ati6zZHBAv6WqFy4xHXGs-t2NFwW0z_rtHadAto8Ok67oKrBIN0sQPxTbWY-ZbjpeGCWbURXvvZMgn9WXK4W75OruezBMGQ1K0SE1nBHNadAMqaJaZ4waTSdWjB9QZbEMAl25kY_1mdU_sC-zATKoRjfJ6zusAdGn4JF78HSl3-lhoho6mR7eJfnxmp-vuhuyorhVKkfMhedJw&ui_locales=zh-CN" target="_blank"> office365 </a>
+        <a href="http://www.youku.com/playlist_show/id_3746228" target="_blank"> 光盘下载 </a>
+        <a href="http://kindle.archiew.top/" target="_blank"> 书舟网 </a>
+        <a href="http://vol.moe/" target="_blank"> Vol.moe </a>
+        <a href="http://61.139.105.138/xtgl/login_slogin.html;jsessionid=F28188D872B7A552AE11350DC3DCB0A1" target="_blank"> 教务系统 </a>
+        <a href="http://10.22.2.4/eportal/index.jsp?wlanuserip=1d90ec446c6b52bbf66d2c0d7942af08&wlanacname=eb3dea19c415ccae600bdc9db5d15bde&ssid=616b2955e4a17daf8a6e9042bf2ea2d1&nasip=390c1cf6eea7dfbca3f3f0aca4b4d442&mac=3fedc065b64fc6b67b1c64d25b8e478b&t=wireless-v2&url=991cd148d76bd155bc697605cae1937fd1b7fdb6a5d2b2fd68600606a01501cf24628833217dc268 target="_blank"> 上网认证 </a>
+        	   	   	  	   	   	  	   
+        	<br><br> 	 	   	   
+        	
+		<form action="http://www.baidu.com/baidu"  target="_blank">
+			
+			<br>
+			<input type="text"  class="input"   name="word" autofocus="autofocus" onfocus="this.select() " onblur="this.select()"placeholder=" why me ">
+			<input type="submit"  value="百度一下" class="submit" href="https://www.baidu.com/" id="mm"> 
+		</form>
+
+   
+        </div>
+	</body>
+</html>
